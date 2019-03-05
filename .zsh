@@ -228,3 +228,64 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
         #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
         echo
     }
+
+#   ---------------------------
+#   5. LARAVEL
+#   ---------------------------
+alias artisan='php artisan'
+alias a='artisan'
+alias migrate='a migrate'
+alias m='migrate'
+
+
+#   --------------------------
+#   6. GITMOJI LOG
+#   --------------------------
+#.# Better Git Logs.
+### Using EMOJI-LOG (https://github.com/ahmadawais/Emoji-Log).
+
+# Git Commit, Add all and Push — in one step.
+function gitmoji() {
+    echo "GITMOJI HELP"
+    echo "gcap\tGit Add, Commit and Push"
+    echo "gnew\t📦 NEW"
+    echo "gimp\t👌 IMPROVE"
+    echo "gfix\t🐛 FIX"
+    echo "grlz\t🚀 RELEASE"
+    echo "gdoc\t📖 DOC"
+    echo "gtst\t✅ TEST"
+}
+
+function gcap() {
+    git add . && git commit -m "$*" && git push
+}
+
+# NEW.
+function gnew() {
+    gcap "📦 NEW: $@"
+}
+
+# IMPROVE.
+function gimp() {
+    gcap "👌 IMPROVE: $@"
+}
+
+# FIX.
+function gfix() {
+    gcap "🐛 FIX: $@"
+}
+
+# RELEASE.
+function grlz() {
+    gcap "🚀 RELEASE: $@"
+}
+
+# DOC.
+function gdoc() {
+    gcap "📖 DOC: $@"
+}
+
+# TEST.
+function gtst() {
+    gcap "✅ TEST: $@"
+}

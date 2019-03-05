@@ -1,0 +1,15 @@
+function punit {
+	if hash phpunit 2>/dev/null; then
+		phpunit "$@"
+	elif [ -f ./vendor/bin/phpunit ]; then
+		./vendor/bin/phpunit "$@"
+	else
+		echo "ERROR: PHPUnit is required"
+		echo "PHPUnit must be located within the PATH or ./vendor/bin/phpunit"
+	fi
+
+	printf '\7'
+}
+
+alias phpunitf="punit --filter"
+alias punitf="phpunitf"
