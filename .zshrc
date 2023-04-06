@@ -136,4 +136,5 @@ if [ -f '/Users/joshcrocker/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jos
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/joshcrocker/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/joshcrocker/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
