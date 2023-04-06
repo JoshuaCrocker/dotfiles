@@ -1,0 +1,20 @@
+[alias]
+	st = status --short --branch
+	newb = checkout -b
+	br = branch
+	reb = "!git fetch origin && git rebase origin/master"
+	# list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+	m = !git checkout master && git pull
+	wip = commit -a -m \"WIP [skip ci]\"
+[merge]
+	conflictstyle = diff3
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[push]
+	autoSetupRemote = true
